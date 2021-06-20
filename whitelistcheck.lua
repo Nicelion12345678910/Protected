@@ -202,7 +202,7 @@ local function decryptString(str)
 	return decryptedString
 end
 
-local localPlayer = Game:GetService("Players").LocalPlayer
+local localPlayer = game:GetService("Players").LocalPlayer
 
 local accounts = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicelion12345678910/Protected/main/accounts.lua", true))()
 local whitelisted = false
