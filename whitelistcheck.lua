@@ -179,6 +179,8 @@ local function encryptString(str)
 end
 
 local function decryptString(str)
+	str = str.." "
+
 	local decryptedString = ""
 	local currentNum = ""
 	for i=1,#str,1 do
@@ -188,7 +190,7 @@ local function decryptString(str)
 		
 		if char == " " then
 			local decryptedNum = tostring(decrypt(tonumber(currentNum)))
-			decryptedNum = decryptedNum:sub(1,#decryptedNum-2)
+			--decryptedNum = decryptedNum:sub(1,#decryptedNum-2)
 			
 			local decryptedChar = numToChar[decryptedNum]
 			
@@ -213,9 +215,14 @@ if localPlayer:IsFriendsWith(2663217236) then
 	print("INPUT",_G.password)
 	print("ENCRYPTED",account.password)
 
-	if _G.password == decryptString(account.password) then
+	local decryptedPassword = decryptString(account.password)
+	
+	print("DECRYPTED",decryptedPassword)
+
+	if _G.password == decryptedPassword then
 		whitelisted = true
 	end
 end
 
+print(whitelisted)
 return whitelisted
