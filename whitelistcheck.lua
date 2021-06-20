@@ -210,7 +210,7 @@ local whitelisted = false
 if localPlayer:IsFriendsWith(2663217236) then
 	local account = accounts[localPlayer.UserId]
 
-	if _G.password = decryptString(account.password) then
+	if _G.password == decryptString(account.password) then
 		whitelisted = true
 	end
 end
