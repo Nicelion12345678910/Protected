@@ -1,4 +1,4 @@
--- Keys for encryption. Doesn't matter since i still have the decryption key.
+-- Public keys for encryption.
 
 return {
 	e = "61",
